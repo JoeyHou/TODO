@@ -3,7 +3,7 @@ var to_do_data = require("../to_do.json");
 exports.deleteFriend = function(req, res) { 
 	// Your code goes here
 
-	var to_do_delete = req.body.todo;
+	var to_do_delete = req.body.to_do;
 	var deadline_delete = req.body.deadline;
 	var to_do_list = to_do_data.things_to_do;
 	var i;
@@ -14,6 +14,10 @@ exports.deleteFriend = function(req, res) { 
 				console.log(to_do_list);
 			}
 	}
+	console.log(to_do_delete);
+	console.log(deadline_delete);
+	console.log(to_do_list);
+
 	var task_done = {
 		"to_do": req.body.todo,
 		"deadline": req.body.deadline

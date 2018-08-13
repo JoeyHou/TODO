@@ -4,12 +4,8 @@
 $(document).ready(function() {
 	initializePage();
 	$('.done').on('click', delete_task);
-	$("#addFriendForm").on('submit', handleSubmission);
-	// var n = new Date();
-	// var y = n.getFullYear();
-	// var m = n.getMonth() + 1;
-	// var d = n.getDate();
-	// document.getElementById("date").innerHTML = n;
+	$("#addTaskForm").on('submit', handleSubmission);
+
 
 })
 
@@ -18,6 +14,38 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	initializeBackground();
+	initializeDate();
+}
+
+function initializeBackground(){
+	// initialize background
+	var img = "url(../img/" + (Math.floor(Math.random() * 6 ) + 1).toString() + ".jpg)";
+	$('body').css('background-image', img);
+
+}
+
+function initializeDate(){
+	// initialize showDate
+	var n = new Date();
+	var d = n.getDate();
+	var month_dic = {
+		1: 'Jan.',
+		2: 'Feb.',
+		3: 'Mar.',
+		4: 'Apr.',
+		5: 'May',
+		6: 'Jun.',
+		7: 'Jul.',
+		8: 'Aug.',
+		9: 'Sep.',
+		10: 'Oct.',
+		11: 'Nov.',
+		12: 'Dec.'
+	}
+	var m = n.getMonth() + 1;
+	console.log(month_dic[m]);
+	$("#date").html(month_dic[m] + ' ' + d.toString());
 }
 
 function handleSubmission(event) {
@@ -43,9 +71,10 @@ function handleSubmission(event) {
 
 function delete_task(event){
 	event.preventDefault();
-	var task_name = $(this).parent().find('a').find('h4').html();
+	var task_name = $(this).parent().find('h4').html();
 	var task_deadline = $(this).parent().find('p').html();
-	var deferred = $.post("/delete", {'todo':task_name, 'deadline':task_deadline});
+	console.log(task_deadline);
+	var deferred = $.post("/delete", {'to_do':task_name, 'deadline':task_deadline});
 
 	deferred.success(function () {
 		$.get("/");

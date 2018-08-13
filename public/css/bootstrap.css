@@ -782,8 +782,8 @@ pre code {
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 0px;
+  padding-left: 0px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -810,19 +810,19 @@ pre code {
 
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 90%;
   }
 }
 
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 90%;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 90%;
   }
 }
 

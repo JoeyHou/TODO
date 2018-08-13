@@ -5,7 +5,9 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
         <link rel="stylesheet" href="css/index.css">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-grid.css">
+        <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
 
         <script src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -18,81 +20,71 @@
         <!-- <div class="header">
             <div class="banner">Joey's Place</div>
         </div> -->
-
-        <div class="container main">
-            <div class="row">
-                <div class="col-3 left">
-                    <div id="to_do">
-                        <a href="/">
-                            <h2 style="color: #000000">To-do-list</h2>
-                        </a>
-                        {{#each things_to_do}}
-                        <div id="friend">
-                            <hr>
-                            <a href="#" class="friend_link">
+        <div class="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 left">
+                        <div id="to_do">
+                            <h3>To-do-list</h3>
+                            {{#each things_to_do}}
+                            <div class="small_card done">
                                 <h4>{{to_do}}</h4>
-                            </a>
-                            <p>{{deadline}}</p>
-                            <button type="button" class="done">Done!</button>
-
-                        </div>
-                        {{/each}}
-                    </div>
-                    <hr>
-
-                    <div id="finished">
-                        <a href="/">
-                            <h2 style="color: #000000">Finished</h2>
-                        </a>
-                        {{#each things_done}}
-                        <div id="friend">
-                            <a href="#" class="friend_link">
-                                <h4>{{to_do}}</h4>
-                            </a>
-                            <p> {{deadline}}</p>
-                            <hr>
-                        </div>
-                        {{/each}}
-                    </div>
-                </div>
-
-                <div class="col-7 middle">
-                            <div id="time">
-                                <iframe src="http://free.timeanddate.com/clock/i6damuzr/n1232/fn10/fs42/bas2/bat0/pa0/tt0/tw0/tm1/ts1/tb2" frameborder="0" width="441" height="48"></iframe>
+                                <p>{{deadline}}</p>
+                                <!-- <button type="button" class="done">Done!</button> -->
                             </div>
-                            <hr>
-                            <form id="addFriendForm" role="form" method="post" action="/add">
-                                <h3>Add to plan</h3>
-                                <div class="form-group">
-                                    <label for="to_do">To-do:</label>
-                                    <input type="text" class="form-control" style="width: 400px" id="input_to_do" placeholder="What do you plan to do?" name="to_do">
-                                </div>
-                                <div class="form-group">
-                                    <label for="deadline">Deadline:</label>
-                                    <input type="text" class="form-control" style="width: 400px" id="input_deadline" placeholder="As early as possible." name="deadline">
-                                </div>
-                                <input type="submit" class="btn btn-default" value="Add to my list"></input>
-                            </form>
-                            <hr>
-                            <div id="calendar">
-                                <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;mode=WEEK&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=z9hou%40ucsd.edu&amp;color=%231B887A&amp;src=%23contacts%40group.v.calendar.google.com&amp;color=%2328754E&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="400" height="400" frameborder="0" scrolling="no"></iframe>
-                            </div>
+                            {{/each}}
+                        </div>
+                        <hr>
 
+                        <div id="finished">
+                            <h3>Finished</h3>
+                            {{#each things_done}}
+                            <div class="small_card">
+                                <a href="#" class="friend_link">
+                                    <h4>{{to_do}}</h4>
+                                </a>
+                                <p> {{deadline}}</p>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+
+                    <div class="col-7 middle">
+                        <div id="date">
+                            <!-- <iframe src="http://free.timeanddate.com/clock/i6damuzr/n1232/fn10/fs42/bas2/bat0/pa0/tt0/tw0/tm1/ts1/tb2" frameborder="0" width="441" height="48"></iframe> -->
+                        </div>
+
+                        <hr>
+
+                        <form id="addTaskForm" role="form" method="post" action="/add">
+                            <h3 style="color: #FFFFFF">Add to plan</h3>
+                            <div class="form-group">
+                                <label for="to_do">To-do:</label>
+                                <input type="text" class="form-control" id="input_to_do" placeholder="What do you plan to do?" name="to_do">
+                            </div>
+                            <div class="form-group">
+                                <label for="deadline">Deadline:</label>
+                                <input type="text" class="form-control" id="input_deadline" placeholder="As early as possible." name="deadline">
+                            </div>
+                            <input type="submit" class="btn btn-default" value="Add to my list"></input>
+                        </form>
+
+                        <hr>
+
+                        <div id="calendar">
+                            <!-- <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;mode=WEEK&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=z9hou%40ucsd.edu&amp;color=%231B887A&amp;src=%23contacts%40group.v.calendar.google.com&amp;color=%2328754E&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="400" height="400" frameborder="0" scrolling="no"></iframe> -->
+                        </div>
+
+                    </div>
+                    <div class="col-2 right">
+                        <a style="color: #FFFFFF" href="https://ucsd.edu" target="_blank">ucsd</a>
+                    </div>
                 </div>
-                <div class="col-2 right">
-                    <a href="https://ucsd.edu" target="_blank">ucsd</a>
-                </div>
+
             </div>
-
         </div>
-
         <script src="../js/jquery-1.11.0.js"></script>
         <script src="../js/bootstrap.js"></script>
         <script src="../js/hci-friends.js"></script>
-        <!-- <script>
-            $(document).ready(function(){
-
-            }
-        </script> -->
     </body>
 </html>
