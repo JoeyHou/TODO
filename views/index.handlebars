@@ -56,22 +56,31 @@
                     </div>
                 </div>
 
-                <div class="col-9 right">
+                <div class="col-7 middle">
+                            <div id="time">
+                                <iframe src="http://free.timeanddate.com/clock/i6damuzr/n1232/fn10/fs42/bas2/bat0/pa0/tt0/tw0/tm1/ts1/tb2" frameborder="0" width="441" height="48"></iframe>
+                            </div>
+                            <hr>
+                            <form id="addFriendForm" role="form" method="post" action="/add">
+                                <h3>Add to plan</h3>
+                                <div class="form-group">
+                                    <label for="to_do">To-do:</label>
+                                    <input type="text" class="form-control" style="width: 400px" id="input_to_do" placeholder="What do you plan to do?" name="to_do">
+                                </div>
+                                <div class="form-group">
+                                    <label for="deadline">Deadline:</label>
+                                    <input type="text" class="form-control" style="width: 400px" id="input_deadline" placeholder="As early as possible." name="deadline">
+                                </div>
+                                <input type="submit" class="btn btn-default" value="Add to my list"></input>
+                            </form>
+                            <hr>
+                            <div id="calendar">
+                                <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;mode=WEEK&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=z9hou%40ucsd.edu&amp;color=%231B887A&amp;src=%23contacts%40group.v.calendar.google.com&amp;color=%2328754E&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="400" height="400" frameborder="0" scrolling="no"></iframe>
+                            </div>
 
-                    <!-- <iframe src="http://free.timeanddate.com/clock/i6dalgtk/n459/fn8/fs19/ahl/avb/bo2/pa4/tt0/tw1/tm1/th2/ts1/ta1/tb4" frameborder="0" width="204" height="54"></iframe> -->
-                    <div id='date'></div>
-                    <form id="addFriendForm" role="form" method="post" action="/add">
-                        <h3>Add to plan</h3>
-                        <div class="form-group">
-                            <label for="to_do">To-do:</label>
-                            <input type="text" class="form-control" id="input_to_do" placeholder="What do you plan to do?" name="to_do">
-                        </div>
-                        <div class="form-group">
-                            <label for="deadline">Deadline:</label>
-                            <input type="text" class="form-control" id="input_deadline" placeholder="As early as possible." name="deadline">
-                        </div>
-                        <input type="submit" class="btn btn-default" value="Add to my list"></input>
-                    </form>
+                </div>
+                <div class="col-2 right">
+                    <a href="https://ucsd.edu" target="_blank">ucsd</a>
                 </div>
             </div>
 

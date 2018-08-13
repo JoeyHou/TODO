@@ -5,11 +5,11 @@ $(document).ready(function() {
 	initializePage();
 	$('.done').on('click', delete_task);
 	$("#addFriendForm").on('submit', handleSubmission);
-	var n = new Date();
+	// var n = new Date();
 	// var y = n.getFullYear();
 	// var m = n.getMonth() + 1;
 	// var d = n.getDate();
-	document.getElementById("date").innerHTML = n;
+	// document.getElementById("date").innerHTML = n;
 
 })
 
