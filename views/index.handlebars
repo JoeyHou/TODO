@@ -23,41 +23,37 @@
         <div class="main">
             <div class="container">
                 <div class="row">
-                    <div class="col-3 left">
-                        <div id="to_do">
-                            <h3>To-do-list</h3>
-                            {{#each things_to_do}}
-                            <div class="small_card done">
-                                <h4>{{to_do}}</h4>
-                                <p>{{deadline}}</p>
-                                <!-- <button type="button" class="done">Done!</button> -->
+                    <div class="col-3">
+                        <div class="left">
+                            <div id="to_do">
+                                <div class="subtitle">To-do-list</div>
+                                {{#each things_to_do}}
+                                <div class="small_card done">
+                                    <div class="task_name">{{to_do}}</div>
+                                    <p>{{deadline}}</p>
+                                </div>
+                                {{/each}}
                             </div>
-                            {{/each}}
-                        </div>
-                        <hr>
 
-                        <div id="finished">
-                            <h3>Finished</h3>
-                            {{#each things_done}}
-                            <div class="small_card">
-                                <a href="#" class="friend_link">
-                                    <h4>{{to_do}}</h4>
-                                </a>
-                                <p> {{deadline}}</p>
+                            <hr>
+
+                            <div id="finished">
+                                <div class="subtitle">Finished</div>
+                                {{#each things_done}}
+                                <div class="small_card">
+                                    <div class="task_name">{{to_do}}</div>
+                                </div>
+                                {{/each}}
                             </div>
-                            {{/each}}
                         </div>
                     </div>
-
-                    <div class="col-7 middle">
-                        <div id="date">
-                            <!-- <iframe src="http://free.timeanddate.com/clock/i6damuzr/n1232/fn10/fs42/bas2/bat0/pa0/tt0/tw0/tm1/ts1/tb2" frameborder="0" width="441" height="48"></iframe> -->
-                        </div>
+                    <div class="col-4 middle">
+                        <div id="date"></div>
 
                         <hr>
 
                         <form id="addTaskForm" role="form" method="post" action="/add">
-                            <h3 style="color: #FFFFFF">Add to plan</h3>
+                            <div class="subtitle">Add to plan</div>
                             <div class="form-group">
                                 <label for="to_do">To-do:</label>
                                 <input type="text" class="form-control" id="input_to_do" placeholder="What do you plan to do?" name="to_do">
@@ -76,7 +72,43 @@
                         </div>
 
                     </div>
-                    <div class="col-2 right">
+
+                    <!-- Links on the right side. -->
+                    <div class="col-5">
+                        <div class="right">
+                            <div class="subtitle">Links</div>
+                            <!-- GitHub -->
+                            <div class="small_card">
+                                <p class="links">
+                                    <a href="https://www.github.com/JoeyHou/" class="my_links_name" target="_blank">
+                                        <i class="fa fa-github"></i>GitHub
+                                    </a>
+                                </p>
+                            </div>
+
+                            <!-- LinkedIn -->
+                            <p class="links">
+                                <a href="https://www.linkedin.com/in/joeyhou" class="my_links_name" target="_blank">
+                                    <i class="fa fa-linkedin-square"></i>LinkedIn
+                                </a>
+                            </p>
+
+                            <!-- Facebook -->
+                            <p class="links">
+                                <a href="https://www.facebook.com/HOUJOE99" class="my_links_name" target="_blank">
+                                    <i class="fa fa-facebook-square"></i>Facebook
+                                </a>
+                            </p>
+
+                            <!-- E-mail -->
+                            <p class="links">
+                                <a href="mailto://z9hou@ucsd.edu" class="my_links_name" target="_blank">
+                                    <i class="fa fa-envelope"></i>E-mail ME!
+                                </a>
+                            </p>
+
+                        </div>
+
                         <a style="color: #FFFFFF" href="https://ucsd.edu" target="_blank">ucsd</a>
                     </div>
                 </div>

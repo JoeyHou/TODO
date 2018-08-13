@@ -45,7 +45,7 @@ function initializeDate(){
 	}
 	var m = n.getMonth() + 1;
 	console.log(month_dic[m]);
-	$("#date").html(month_dic[m] + ' ' + d.toString());
+	$("#date").html('Today is: ' + month_dic[m] + ' ' + d.toString() + '<span class="blink">_</span>');
 }
 
 function handleSubmission(event) {
@@ -71,9 +71,9 @@ function handleSubmission(event) {
 
 function delete_task(event){
 	event.preventDefault();
-	var task_name = $(this).parent().find('h4').html();
-	var task_deadline = $(this).parent().find('p').html();
-	console.log(task_deadline);
+	var task_name = $(this).find('div').html();
+	var task_deadline = $(this).find('p').html();
+	console.log(task_name);
 	var deferred = $.post("/delete", {'to_do':task_name, 'deadline':task_deadline});
 
 	deferred.success(function () {

@@ -19,9 +19,10 @@ exports.deleteFriend = function(req, res) { 
 	console.log(to_do_list);
 
 	var task_done = {
-		"to_do": req.body.todo,
-		"deadline": req.body.deadline
+		"to_do": to_do_delete,
+		"deadline": deadline_delete
 	};
+	// console.log(task_done)
 	to_do_data.things_done.push(task_done);
 	res.render('index', to_do_data);
  }

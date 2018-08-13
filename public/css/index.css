@@ -9,27 +9,46 @@ body {
     background-size: cover;
 }
 
-.main {
-     background-color: rgba(0, 0, 0, 0.2);
-     min-height: 803px;
+@keyframes blink {
+  0%, 20% {
+    opacity: 1; }
+  90%, 100% {
+    opacity: 0; }
 }
 
-.left {margin-top: 50px;}
+@font-face {
+    font-family: "myFont_main_content";
+    src: url("../weezerfont.ttf");
+}
+
+.main {
+    background-color: rgba(0, 0, 0, 0.2);
+    min-height: 803px;
+    font-family: "myFont_main_content", "san Serif", serif;
+}
+
+.subtitle{color: #FFFFFF; font-size: 35px;}
+
+.left {margin-top: 50px; padding-right: 20px}
 .left .small_card {background-color: rgba(0, 0, 0, 0.4); border-radius: 5px; margin: 0px 0px 15px}
 .left #to_do .small_card:hover{background-color: rgba(0, 0, 0, 0.8); text-decoration: line-through; transition: all 0.2s;}
-
-.left .small_card h4 {color: #FFFFFF; padding: 10px 15px 0px; margin: 0px}
-.left .small_card p {color: #FFFFFF; padding: 0px 15px 10px; margin: 0px}
+.left #to_do .small_card .task_name {color: #FFFFFF; padding: 10px 15px 0px; margin: 0px; font-size: 20px; font-weight: bold;}
+.left #to_do .small_card p {color: #FFFFFF; padding: 0px 15px 10px; margin: 0px}
 .left #to_do{min-height: 375px;}
 .left #finished {margin-top: 20px;min-height: 100px;}
-.left h3{color: #FFFFFF;}
+.left #finished .small_card .task_name {color: #FFFFFF; padding: 10px 15px 10px; margin: 0px; font-size: 20px; text-decoration: line-through; font-weight: bold;}
+.left .subtitle{color: #FFFFFF; font-size: 35px;}
 
 .middle {margin-top: 50px;}
-.middle #date {color: #FFFFFF;}
-.middle .form-group label{color: #FFFFFF;}
-.middle .form-group input{width: 300px;}
+.middle #date {color: #FFFFFF; font-size: 40px;}
+.middle #date .blink {animation: blink 1s infinite;}
+.middle .subtitle{color: #FFFFFF; font-size: 30px;}
+.middle .form-group {padding-left: 3px;}
+.middle .form-group label{color: #FFFFFF; font-size: 20px;}
+.middle .form-group input{width: 300px; font-size: 20;}
 
-.right {margin-top: 50px;}
+.right {margin-top: 50px; padding-left: 30px;}
+.right .small_card {background-color: rgba(0, 0, 0, 0.4); border-radius: 5px; width: 200px; height: 200px}
 
 
 
