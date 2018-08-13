@@ -5,13 +5,12 @@ $(document).ready(function() {
 	initializePage();
 	$('.done').on('click', delete_task);
 	$("#addFriendForm").on('submit', handleSubmission);
+	var n = new Date();
+	// var y = n.getFullYear();
+	// var m = n.getMonth() + 1;
+	// var d = n.getDate();
+	document.getElementById("date").innerHTML = n;
 
-	// $("#addFriendForm").bind('ajax:complete', function() {
-	// 	$.get("/");
-	// 	alert('hi!');
-	// 	location.reload();
-	// 	console.log("Form completed");
-   // });
 })
 
 /*
@@ -54,39 +53,4 @@ function delete_task(event){
 		console.log("Deleted");
 	});
 
-	// alert('hi!');
-	// location.reload();
-}
-
-function anagrammedName(name) {
-	// Thanks, Internet Anagram Server!
-
-	if (name == "Doug Engelbart") {
-		return "Notable Grudge";
-	}
-	else if (name == "Ivan Sutherland") {
-		return "Vandal Heist Run";
-	}
-	else if (name == "JCR Licklider") {
-		return "Crick Rid Jell";
-	}
-	else if (name == "Vannevar Bush") {
-		return "Ravens Van Hub";
-	}
-	else if (name == "Alan C. Kay") {
-		return "Canal Yak";
-	}
-	else if (name == "Allen Newell") {
-		return "Ellen All New";
-	}
-	else if (name == "Lucy Suchman") {
-		return "Lunacy Chums";
-	}
-	else if (name == "Grace Hopper") {
-		return "Gear Chopper";
-	}
-	else {
-		console.log(name + " not known for anagramming.");
-		return name;
-	}
 }
