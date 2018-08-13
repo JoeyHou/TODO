@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Joey's Place </title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="css/index.css">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+        </script>
+
+    </head>
+
+    <body>
+        <!-- <div class="header">
+            <div class="banner">Joey's Place</div>
+        </div> -->
+
+        <div class="container main">
+            <div class="row">
+                <div class="col-3 left">
+                    <div id="to_do">
+                        <a href="/">
+                            <h2 style="color: #000000">To-do-list</h2>
+                        </a>
+                        {{#each things_to_do}}
+                        <div id="friend">
+                            <hr>
+                            <a href="#" class="friend_link">
+                                <h4>{{to_do}}</h4>
+                            </a>
+                            <p>{{deadline}}</p>
+                            <button type="button" class="done">Done!</button>
+
+                        </div>
+                        {{/each}}
+                    </div>
+                    <hr>
+
+                    <div id="finished">
+                        <a href="/">
+                            <h2 style="color: #000000">Finished</h2>
+                        </a>
+                        {{#each things_done}}
+                        <div id="friend">
+                            <a href="#" class="friend_link">
+                                <h4>{{to_do}}</h4>
+                            </a>
+                            <p> {{deadline}}</p>
+                            <hr>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+
+                <div class="col-9 right">
+
+                    <iframe src="http://free.timeanddate.com/clock/i6dalgtk/n459/fn8/fs19/ahl/avb/bo2/pa4/tt0/tw1/tm1/th2/ts1/ta1/tb4" frameborder="0" width="204" height="54"></iframe>
+
+                    <form id="addFriendForm" role="form" method="post" action="/add">
+                        <h3>Add to plan</h3>
+                        <div class="form-group">
+                            <label for="to_do">To-do:</label>
+                            <input type="text" class="form-control" id="input_to_do" placeholder="What do you plan to do?" name="to_do">
+                        </div>
+                        <div class="form-group">
+                            <label for="deadline">Deadline:</label>
+                            <input type="text" class="form-control" id="input_deadline" placeholder="As early as possible." name="deadline">
+                        </div>
+                        <input type="submit" class="btn btn-default" value="Add to my list"></input>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="../js/jquery-1.11.0.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/hci-friends.js"></script>
+        <!-- <script>
+            $(document).ready(function(){
+
+            }
+        </script> -->
+    </body>
+</html>
