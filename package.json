@@ -13,10 +13,4 @@
     "express": "^3.21.2",
     "express3-handlebars": "^0.5.2"
   },
-
-  // "scripts":{
-  //   "start": "node app.js",
-  //   "test": "mocha",
-  //   "postinstall": "bower install && grunt build"
-  // }
 }
