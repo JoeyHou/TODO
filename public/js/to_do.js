@@ -5,8 +5,6 @@ $(document).ready(function() {
 	initializePage();
 	$('.done').on('click', delete_task);
 	$("#addTaskForm").on('submit', handleSubmission);
-
-
 })
 
 /*
