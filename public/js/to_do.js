@@ -18,7 +18,7 @@ function initializePage() {
 
 function initializeBackground(){
 	// initialize background
-	var img = "url(../img/" + (Math.floor(Math.random() * 6 ) + 1).toString() + ".jpg)";
+	var img = "url(../img/" + (Math.floor(Math.random() * 19 ) + 1).toString() + ".jpg)";
 	$('body').css('background-image', img);
 
 }
