@@ -1,3 +1,8 @@
+/**
+*   Author: Joey Hou
+*   Date Created: Aug. 13, 2018
+*   Project Name: Joey's Place
+*/
 'use strict';
 
 // Call this function when the page loads (the "ready" event)
@@ -8,7 +13,7 @@ $(document).ready(function() {
 })
 
 /*
- * Function that is called when the document is ready.
+ * Functions that are called when the document is ready.
  */
 function initializePage() {
 	console.log("Javascript connected!");
@@ -20,7 +25,6 @@ function initializeBackground(){
 	// initialize background
 	var img = "url(../img/" + (Math.floor(Math.random() * 19 ) + 1).toString() + ".jpg)";
 	$('body').css('background-image', img);
-
 }
 
 function initializeDate(){
@@ -46,6 +50,9 @@ function initializeDate(){
 	$("#date").html('Today is: ' + month_dic[m] + ' ' + d.toString() + '<span class="blink">_</span>');
 }
 
+/*
+ * Function that are called when user make moves.
+ */
 function handleSubmission(event) {
 	event.preventDefault();
 	var to_do = $(this).find('#input_to_do').val();
@@ -59,12 +66,12 @@ function handleSubmission(event) {
 		console.log("Form completed");
 	});
 
-	deferred.error(function () {
-		alert('Error!');
-		location.reload();
-		console.log("Error!");
-	});
-	location.reload();
+	// deferred.error(function () {
+	// 	alert('Error!');
+	// 	location.reload();
+	// 	console.log("Error!");
+	// });
+	// location.reload();
 }
 
 function delete_task(event){
@@ -79,5 +86,4 @@ function delete_task(event){
 		location.reload();
 		console.log("Deleted");
 	});
-
 }

@@ -1,3 +1,9 @@
+/**
+*   Author: Joey Hou
+*   Date Created: Aug. 13, 2018
+*   Project Name: Joey's Place
+*/
+
 body {
     /* background: url('../img/1.jpg'); */
     background-position: center center;
@@ -21,12 +27,40 @@ body {
     src: url("../weezerfont.ttf");
 }
 
-.main {
-    background-color: rgba(0, 0, 0, 0.2);
-    min-height: 803px;
-    font-family: "myFont_main_content", "san Serif", serif;
+/* Overwrite the bootstrap stylesheet. */
+.container {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-left: 5%;
+    margin-right: 2%;
+    width: 100%;
 }
 
+@media (min-width: 576px) {
+  .container {
+    max-width: 576px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 992px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1240px;
+  }
+}
+
+.main {background-color: rgba(0, 0, 0, 0.2);min-height: 803px; max-height: 1500px; font-family: "myFont_main_content", "san Serif", serif;}
 .subtitle{color: #FFFFFF; font-size: 35px;}
 
 .left {margin-top: 50px; padding-right: 20px}
@@ -34,7 +68,7 @@ body {
 .left #to_do .small_card:hover{background-color: rgba(0, 0, 0, 0.8); text-decoration: line-through; transition: all 0.2s;}
 .left #to_do .small_card .task_name {color: #FFFFFF; padding: 10px 15px 0px; margin: 0px; font-size: 20px; font-weight: bold;}
 .left #to_do .small_card p {color: #FFFFFF; padding: 0px 15px 10px; margin: 0px}
-.left #to_do{min-height: 375px;}
+.left #to_do{min-height: 362px;}
 .left #finished {margin-top: 20px;min-height: 100px;}
 .left #finished .small_card .task_name {color: #FFFFFF; padding: 10px 15px 10px; margin: 0px; font-size: 20px; text-decoration: line-through; font-weight: bold;}
 .left .subtitle{color: #FFFFFF; font-size: 35px;}
@@ -45,13 +79,18 @@ body {
 .middle .subtitle{color: #FFFFFF; font-size: 30px;}
 .middle .form-group {padding-left: 3px;}
 .middle .form-group label{color: #FFFFFF; font-size: 20px;}
-.middle .form-group input{width: 300px; font-size: 20;}
+.middle .form-group input{width: 300px; font-size: 14px;}
+.middle #submit_button {margin-left: 3px; margin-top: 5px;}
+.middle .up_coming_events {margin-left: 0px; margin-right: 0px; max-width: 100%}
+.middle .calender_card .subtitle {font-size: 18px; text-align: center; text-decoration: underline;}
+.middle .event_card {background-color: rgba(0, 0, 0, 0.4); border-radius: 5px;}
+.middle .event_content {color: #FFFFFF; font-size: 14px; padding: 5px 10px 5px;}
 
-.right {margin-top: 50px; padding-left: 30px;}
-.right .link_container {width: 180px; height: 180px; text-align: center; vertical-align: middle;}
-.right .small_card {background-color: rgba(0, 0, 0, 0.4); margin-top: 30px; border-radius: 10px; width: 180px; height: 180px; border-top: 30px;}
-.right .small_card i {margin-top: 35px; color: #FFFFFF}
-.right .small_card .subtitle {font-size: 25px; text-decoration: none;}
+.right {margin-top: 50px; padding-left: 20px;}
+.right .link_container {width: 140px; height: 140px; text-align: center; vertical-align: middle;}
+.right .small_card {background-color: rgba(0, 0, 0, 0.4); margin-top: 30px; border-radius: 10px; width: 140px; height: 140px; border-top: 30px;}
+.right .small_card i {margin-top: 25px; color: #FFFFFF}
+.right .small_card .subtitle {font-size: 18px; text-decoration: none;}
 .right .small_card:hover {background-color: rgba(0, 0, 0, 0.8); transition: all 0.2s;}
 
 .animated {

@@ -1,13 +1,20 @@
+<!--
+Author: Joey Hou
+Date Created: Aug. 13, 2018
+Project Name: Joey's Place
+-->
+
 <!DOCTYPE html>
 <html>
     <head>
         <title> Joey's Place </title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/to_do.css">
+
 
         <!-- I have changed the property of container in bootstrap.css and bootstrap-grid.css -->
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap-grid.css">
+        <link rel="stylesheet" href="css/to_do.css">
 
         <script src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -54,7 +61,7 @@
                         </div>
                     </div>
 
-                    <div class="col-5 middle">
+                    <div class="col-6 middle">
                         <div id="date"></div>
 
                         <hr>
@@ -69,97 +76,127 @@
                                 <label for="deadline">Deadline:</label>
                                 <input type="text" class="form-control" id="input_deadline" placeholder="As early as possible." name="deadline">
                             </div>
-                            <input type="submit" class="btn btn-default" value="Add to my list"></input>
+                            <input id="submit_button" type="submit" class="btn btn-default" value="Add to my list"></input>
                         </form>
 
                         <hr>
 
                         <div id="calendar">
                             <!-- <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;mode=WEEK&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=z9hou%40ucsd.edu&amp;color=%231B887A&amp;src=%23contacts%40group.v.calendar.google.com&amp;color=%2328754E&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="400" height="400" frameborder="0" scrolling="no"></iframe> -->
-                        </div>
+                            <p class="subtitle">Upcoming Events</p>
+                            <p style="color: #FFFFFF" id="content"></p>
+                            <div class="container up_coming_events">
+                                <div class="row">
+                                    <div class="col-sm-4 calender_card">
+                                        <p class="subtitle">Today</p>
+                                        <div id="today_events"></div>
+                                    </div>
+                                    <div class="col-sm-4 calender_card">
+                                        <p class="subtitle">Tomorrow</p>
+                                        <div id="tomorrow_events"></div>
+                                    </div>
+                                    <div class="col-sm-4 calender_card">
+                                        <p class="subtitle">Future</p>
+                                        <div id="future_events"></div>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <!--Add buttons to initiate auth sequence and sign out-->
+                            <button id="authorize_button" class="btn btn-default" style="display: none;">Authorize</button>
+                            <button id="signout_button" class="btn btn-default" style="display: none;">Sign Out</button>
+                        </div>
                     </div>
 
                     <!-- Links on the right side. -->
-                    <div class="col-2">
-                        <div class="right">
-                            <div class="subtitle">Links</div>
-                            <!-- Gmail -->
-                            <div class="link_container">
-                                <a href="https://mail.google.com/mail/u/0/#inbox" style="text-decoration: none;" target="_blank">
-                                    <div class="small_card">
-                                        <i class="fas fa-at fa-5x"></i>
-                                        <p class="subtitle"> Gmail </p>
-                                    </div>
-                                </a>
-                            </div>
+                    <div class="col-3">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="right">
+                                        <div class="subtitle">Links</div>
+                                        <!-- Gmail -->
+                                        <div class="link_container">
+                                            <a href="https://mail.google.com/mail/u/0/#inbox" style="text-decoration: none;" target="_blank">
+                                                <div class="small_card">
+                                                    <i class="fas fa-at fa-4x"></i>
+                                                    <p class="subtitle"> Gmail </p>
+                                                </div>
+                                            </a>
+                                        </div>
 
-                            <!-- Webreg -->
-                            <div class="link_container">
-                                <a href="https://act.ucsd.edu/webreg2/" style="text-decoration: none;" target="_blank">
-                                    <div class="small_card">
-                                        <i class="fas fa-language fa-5x"></i>
-                                        <p class="subtitle"> WebReg </p>
-                                    </div>
-                                </a>
-                            </div>
+                                        <!-- Webreg -->
+                                        <div class="link_container">
+                                            <a href="https://act.ucsd.edu/webreg2/" style="text-decoration: none;" target="_blank">
+                                                <div class="small_card">
+                                                    <i class="fas fa-language fa-4x"></i>
+                                                    <p class="subtitle"> WebReg </p>
+                                                </div>
+                                            </a>
+                                        </div>
 
-                            <!-- Tritoned -->
-                            <div class="link_container">
-                                <a href="http://tritonlink.ucsd.edu/" style="text-decoration: none;" target="_blank">
-                                    <div class="small_card">
-                                        <i class="fas fa-atlas fa-5x"></i>
-                                        <p class="subtitle" style="margin-top: 5px"> Tritoned </p>
-                                    </div>
-                                </a>
-                            </div>
+                                        <!-- Tritoned -->
+                                        <div class="link_container">
+                                            <a href="http://tritonlink.ucsd.edu/" style="text-decoration: none;" target="_blank">
+                                                <div class="small_card">
+                                                    <i class="fas fa-atlas fa-4x"></i>
+                                                    <p class="subtitle" style="margin-top: 5px"> Tritoned </p>
+                                                </div>
+                                            </a>
+                                        </div>
 
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="right">
+                                        <div class="subtitle">Links</div>
+                                        <!-- Facebook -->
+                                        <div class="link_container">
+                                            <a href="https://www.facebook.com/" style="text-decoration: none;" target="_blank">
+                                                <div class="small_card">
+                                                    <i class="fab fa-facebook-f fa-4x"></i>
+                                                    <p class="subtitle"> Facebook </p>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <!-- YouTube -->
+                                        <div class="link_container">
+                                            <a href="https://youtube.com" style="text-decoration: none;" target="_blank">
+                                                <div class="small_card">
+                                                    <i class="fab fa-youtube fa-4x"></i>
+                                                    <p class="subtitle"> YouTube </p>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <!-- Tritoned -->
+                                        <div class="link_container">
+                                            <a href="http://mytritonlink.ucsd.edu/" style="text-decoration: none;" target="_blank">
+                                                <div class="small_card">
+                                                    <i class="fas fa-link fa-4x"></i>
+                                                    <p class="subtitle" style="margin-top: 5px"> TritonLink </p>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
-
-                    </div>
-
-                    <div class="col-2">
-                        <div class="right">
-                            <div class="subtitle">Links</div>
-                            <!-- Facebook -->
-                            <div class="link_container">
-                                <a href="https://www.facebook.com/" style="text-decoration: none;" target="_blank">
-                                    <div class="small_card">
-                                        <i class="fab fa-facebook-f fa-5x"></i>
-                                        <p class="subtitle"> Facebook </p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- YouTube -->
-                            <div class="link_container">
-                                <a href="https://youtube.com" style="text-decoration: none;" target="_blank">
-                                    <div class="small_card">
-                                        <i class="fab fa-youtube fa-5x"></i>
-                                        <p class="subtitle"> YouTube </p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Tritoned -->
-                            <div class="link_container">
-                                <a href="http://mytritonlink.ucsd.edu/" style="text-decoration: none;" target="_blank">
-                                    <div class="small_card">
-                                        <i class="fas fa-link fa-5x"></i>
-                                        <p class="subtitle" style="margin-top: 5px"> TritonLink </p>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-
                     </div>
                 </div>
-
             </div>
         </div>
         <script src="../js/jquery-1.11.0.js"></script>
         <script src="../js/bootstrap.js"></script>
         <script src="../js/to_do.js"></script>
+        <script src="../js/g_calendar.js"></script>
+        <script async defer src="https://apis.google.com/js/api.js"
+            onload="this.onload=function(){};handleClientLoad()"
+            onreadystatechange="if (this.readyState === 'complete') this.onload()">
+        </script>
     </body>
 </html>
